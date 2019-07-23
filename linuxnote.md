@@ -149,3 +149,68 @@ foo ->foo2.3
 - alias #list alias cmd
 - unalias name #remove alias cmd
 
+
+
+# I/O重定向
+
+## redirection
+- stdout standard out device #标准的输出重定向到文件中
+- stdrr standard error device 
+- stdin standard input device
+
+### redirect standard output #重新编辑输出，一般输出到屏幕
+- command > filename #用大于号编辑输出路径到一个文件
+- 标准输出重定向生成的文件有字节，但错误命令重定向生成空文件
+- 技巧：利用错误命令重定向可以清空文件内容，得到空文件
+
+![](linuxnote_files/17.jpg)
+
+- command >> filename #输出追加
+
+![](linuxnote_files/18.jpg)
+
+![](linuxnote_files/19.jpg)
+
+### redirect standard error
+- 在大于号前加数字2
+- 0:studio
+- 1:stdout
+- 2:stderr
+
+
+![](linuxnote_files/21.jpg)
+
+![](linuxnote_files/20.jpg)
+
+### redirect stdout and stderr #同时重定向标准输出和错误到一个文件
+- ls -l . /bin/usr > ls-output.txt 2>&1
+- 先错误输出然后正确输出
+- ls -l . /bin/usr &>1 ls-output.txt 
+
+![](linuxnote_files/23.jpg)
+
+![](linuxnote_files/22.jpg)
+
+### useless message
+
+- /dev/null #相当于垃圾回收站
+- ls -l /bin/usr 2> /dev/null
+
+
+![](linuxnote_files/24.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
