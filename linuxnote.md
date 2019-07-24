@@ -200,6 +200,86 @@ foo ->foo2.3
 ![](linuxnote_files/24.jpg)
 
 
+### redirect stdin
+
+- cat file
+
+- cmd < file
+
+![](linuxnote_files/25.jpg)
+- ctrl+d  #退出cat
+
+### pipe line 
+- 管道线可以把多个命令组合起来使用
+- cmd | cmd #一个命令的输出作为另一个命令的输入
+
+![](linuxnote_files/26.jpg)
+
+### filter 
+- 在管道线中加入过滤器，把输入数据经过转换再输入下一个命令
+- sort #排序
+- unique #去重复
+- wc #word count
+- grep pattern [file]
+	- grep -i ignore caption #忽略大小写
+- head -n 5 #打印前5行
+- tail -n 5
+
+- tee stdin/stdout #中间插入，得到中间结果
+
+
+	ls -l /usr/bin | sort | uniq | wc -l
+	ls -l /usr/bin | sort | uniq | grep zip
+	ls -l /usr/bin | sort | uniq | head -5
+	ls -l /usr/bin | sort| tee ls.txt | uniq | grep zip  
+	
+![](linuxnote_files/27.jpg)
+
+
+
+
+## expansion
+
+- character expansion 
+	- echo [string]
+	- echo * #打印当前目录的所有东西，*为通配符，系统把符号展开了
+	- 
+- pathname expansion
+	- echo *.txt
+
+	- echo .* 
+	- echo .[!.]*
+
+- tilde expansion #波浪线展开
+	- echo ~
+
+- arithmetic expansion
+		
+		$((expression))
+		支持 * - /  % **
+		不支持小数
+		echo $(((2*6)**3))
+
+![](linuxnote_files/28.jpg)
+
+- brace expansion #花括号展开
+	- echo Front-{A,B,C}-End
+	- echo Num_{1,2,3}
+	- echo {A..Z}
+	- echo a{A{1,2},B{3.4}}b
+	- mkdir {2010..2019}-{1..12} #创建月份文件
+
+![](linuxnote_files/29.jpg)
+
+- parameter expansion #变量展开
+	- echo $USER
+	- printenv | less
+
+![](linuxnote_files/30.jpg)
+
+
+
+	
 
 
 
