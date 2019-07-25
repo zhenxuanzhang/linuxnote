@@ -277,11 +277,88 @@ foo ->foo2.3
 
 ![](linuxnote_files/30.jpg)
 
+- command substitution
+	- 命令替换
+	- $(cmd)
 
+![](linuxnote_files/31.jpg)  
+![](linuxnote_files/32.jpg)
 
+### 展开屏蔽
+
+![](linuxnote_files/33.jpg)  
+
+- quoting
+	- double quotes  
+	双引号  
+	路径名，波浪线，花括号展开，空格分割失效  
+	命令，算术，引用展开仍有效
 	
+	- single quotes  
+	单引号  
+	对展开禁用效果最强  
+	命令，算术，引号展开失效
+
+- escaping character 
+	- 转义字符
+	- \,\\, \$, \&, \!
 
 
+## 键盘高级操作技巧
+
+### move cursor 
+-  移动光标
+	-  C Ctrl
+	-  A Alt
+---
+-  C-a 行首
+-  C-e 行尾
+-  C-f 向行尾一个字符
+-  C-b 向行首一个字符
+-  C-l 清屏
+- clear 清空屏幕
+---
+- A-f 向行尾一个词
+- A-b 向行首一个词
+
+### modify text
+
+- C-d 删除一个字符
+- C-t 交换两个字符，与右边替换
+
+- A-t 交换两个词
+- A-l lower 把整个词小写，光标落在词首
+- A-u upper
+
+### copy & paste text
+
+- C-k 剪切光标到行尾
+- C-u 剪切行首到光标
+- C-y 粘贴
+
+- A-d 剪切光标所在词首一个单词
+- A-Backspace 剪切光标所在词尾一个单词
+
+### auto complete
+
+- tab 自动补全
+- double tab 自动补全全部
+
+
+### history
+
+- 命令历史
+- history | less 防刷屏
+- history | grep /usr/bin 查找命令
+- ！num 执行某一个命令  
+
+- C-p preview 上一条命令
+- C-n next 下一条
+- A-< history head
+- A-> history end
+
+- C-r research
+- 
 
 
 
