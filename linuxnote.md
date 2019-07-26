@@ -358,12 +358,130 @@ foo ->foo2.3
 - A-> history end
 
 - C-r research
-- 
+
+
+## 权限
+
+- owner,group,other
+
+![](linuxnote_files/34.jpg)
+
+	ls -l 长格式展示的第一项后九个字符就是文件的权限，
+	第一个字符为文件属性，
+	前3个代表所有者权限，中间3个是组权限，后三个是其他人权限  
+	
+![](linuxnote_files/36.jpg)
+![](linuxnote_files/35.jpg)
+
+	命令：
+	id             显示用户身份号
+	chmod    更改文件模式
+	umask     设置默认的文件权限
+	su             以另一个用户的身份运行 Shell
+	sudo         以另一个用户的身份来执行命令
+	chown      更改文件所有者
+	chgrp        更改文件组所有权
+	passwd     更改用户密码
+	
+---
+### id
+- id #显示用户身份号  
+	- uid user id
+	- gid group id 
+
+![](linuxnote_files/39.jpg)
+
+- /etc/passwd user account
+- /etc/group group info
+- /etc/shadow password
+---
+- read,write,execute
+- r,w,x
+
+![](linuxnote_files/37.jpg)
+
+### chmod
+- chmod change mode
+
+![](linuxnote_files/38.jpg)  
+
+
+	000无权限，001只执行
+	010只写，100只读
+
+- oct 八进制
+	- chmod 600 filename or dirname
+	
+![](linuxnote_files/40.jpg)
+- sym 符号
+	- u user -> owner
+	- g group 
+	- o other
+	- a all = user + group + other #a可省略。默认是a
+	- + 增加权限 
+	- -
+	- =
+	- r,w,x
+
+![](linuxnote_files/41.jpg)
+
+
+### umask
+- umask 创建文件时设置默认权限
+- 使用八进制来从文件属性中删除权限
+- umask 默认权限是0002,后三位为002，对应删除other 的w，第二个权限
 
 
 
+| origin file mode | --- rw- rw- rw- |
+| :-: | :-: | 
+| mask | 000 000 000 010 |  
+| permission | --- rw- rw- r-- | 
+| mask2 | 000 000 000 000 | 
+| permission2 | --- rw- rw- rw- | 
+| mask3 | 000 000 110 110 | 
+| permission3 | --- rw- --- --- |  
+
+![](linuxnote_files/42.jpg)
+
+- specify permission
+	- setuid s 给可执行文件设置，把有效用户设置为所有者id  
+	- setgid s 把有效用户组设置为所有者所在组id
+	- sticky  t 控制共享目录
+
+![](linuxnote_files/44.jpg)  
+
+![](linuxnote_files/43.jpg)
 
 
+### change-role
+
+- logout & login
+- su
+	- super user
+	- su [-[l]] [user]  #l -表示l可省略
+	- 变换身份，从普通用户变为root用户
+	- su -c 'cmd'
+	- 不切换用户，执行root环境下命令
+
+![](linuxnote_files/45.jpg) 
+
+- sudo 
+	- super do
+	- sudo cmd
+	- sudo ls -l /root
+
+### chown
+- change owner or/and group
+- chown [owner][:group] file 
+
+![](linuxnote_files/46.jpg)
+
+### pssswd
+- password
+- passwd [user]
+
+![](linuxnote_files/47.jpg)
 
 
 
