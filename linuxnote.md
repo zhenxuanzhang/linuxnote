@@ -1,14 +1,42 @@
 # linuxnote  
 
+# 目录
+* 操作文件和目录：[操作文件和目录]
+	- 通配符： [wildchar]  
+	- 创建目录：[mkdir]
+	- 复制：[cp]
+	- 移动或重命名：[mv]
+	- 删除：[rm]  
+	- 链接：[ln]
+* 操作命令：[操作命令]
+	- 了解命令类型：[了解命令类型]
+	- 查看帮助：[查看帮助]
+	- 关键字搜索命令全称：[关键字搜索命令全称]
+	- 命令简介：[命令简介]
+	- 别名：[别名]
+* I/O重定向：[I/O重定向]
+	- redirection：[redirection]
+	- expansion：[expansion]
+	- 展开屏蔽：[展开屏蔽]
+	- 键盘高级操作技巧：[键盘高级操作技巧]
+* 权限：[权限]
+	- 身份：[身份]
+	- id：[id]
+	- chmod：[chmod]
+	- umask：[umask]
+	- change-role：[change-role]
+	- chown：[chown]
+	- passwd：[passwd]
+* 进程：[进程]
+	- ps：[ps]
+	- top：[top]
+	- kill：[kill]
+	- shutdown：[shutdown]
+
+
 # 操作文件和目录
-- 通配符： [wildchar 通配符]  
-- 创建目录：[mkdir make directory 创建目录]
-- 复制：[cp copy]
-- 移动或重命名：[mv move 移动或重命名]
-- 删除：[rm remove 删除]  
-
-
-## wildchar 通配符
+## wildchar
+- 通配符
 
 - '*' : 0,1,more char
 - ? : 1 char
@@ -25,14 +53,16 @@
 
 ![](linuxnote_files/1.jpg)
 
-## mkdir make directory 创建目录
+## mkdir 
+- make directory 创建目录
 
 - mkdir dir1
 - mkdir dir1 dir2 dir3  
 
 ![](linuxnote_files/2.jpg)
 
-## cp copy
+## cp 
+- copy
 
 - cp item1 item2  #把单个的文件或目录item1复制成item2
 - cp item... directory #把多个文件复制到一个文件夹中
@@ -47,14 +77,16 @@
 ![](linuxnote_files/3.jpg)
 ![](linuxnote_files/4.jpg)
 
-## mv move 移动或重命名
+## mv 
+- move 移动或重命名
 
 - mv item1 item2
 - mv item... directory
 
 ![](linuxnote_files/5.jpg)
 
-## rm remove 删除
+## rm 
+- remove 删除
 - rm item...
 - option
 		- f --force
@@ -63,7 +95,8 @@
 
 ![](linuxnote_files/6.jpg)
 
-## ln link
+## ln 
+- link 链接
 
 - ln file link #创建硬链接
 - ln -s item link #创建符号链接（软链接）
@@ -92,11 +125,11 @@ foo ->foo2.3
 
 # 操作命令
 
-## 命令类型
-1. execute binary #可执行的二进制程序，显示颜色是绿色
-2. buildin bash #shell 内嵌
-3. shell function
-4. alias #别名
+	命令类型
+	1. execute binary #可执行的二进制程序，显示颜色是绿色
+	2. buildin bash #shell 内嵌
+	3. shell function
+	4. alias #别名
 
 ## 了解命令类型
 - type command #返回cmd的类型
@@ -140,7 +173,8 @@ foo ->foo2.3
 	- space:pagedown
 
 
-## alias
+## 别名
+- alias
 
 - alias name='cmd string'
 
@@ -158,7 +192,8 @@ foo ->foo2.3
 - stdrr standard error device 
 - stdin standard input device
 
-### redirect standard output #重新编辑输出，一般输出到屏幕
+### redirect standard output 
+- 重新编辑输出，一般输出到屏幕
 - command > filename #用大于号编辑输出路径到一个文件
 - 标准输出重定向生成的文件有字节，但错误命令重定向生成空文件
 - 技巧：利用错误命令重定向可以清空文件内容，得到空文件
@@ -182,7 +217,8 @@ foo ->foo2.3
 
 ![](linuxnote_files/20.jpg)
 
-### redirect stdout and stderr #同时重定向标准输出和错误到一个文件
+### redirect stdout and stderr 
+- 同时重定向标准输出和错误到一个文件
 - ls -l . /bin/usr > ls-output.txt 2>&1
 - 先错误输出然后正确输出
 - ls -l . /bin/usr &>1 ls-output.txt 
@@ -284,7 +320,7 @@ foo ->foo2.3
 ![](linuxnote_files/31.jpg)  
 ![](linuxnote_files/32.jpg)
 
-### 展开屏蔽
+## 展开屏蔽
 
 ![](linuxnote_files/33.jpg)  
 
@@ -360,8 +396,9 @@ foo ->foo2.3
 - C-r research
 
 
-## 权限
+# 权限
 
+## 身份
 - owner,group,other
 
 ![](linuxnote_files/34.jpg)
@@ -384,7 +421,7 @@ foo ->foo2.3
 	passwd     更改用户密码
 	
 ---
-### id
+## id
 - id #显示用户身份号  
 	- uid user id
 	- gid group id 
@@ -400,7 +437,7 @@ foo ->foo2.3
 
 ![](linuxnote_files/37.jpg)
 
-### chmod
+## chmod
 - chmod change mode
 
 ![](linuxnote_files/38.jpg)  
@@ -426,7 +463,7 @@ foo ->foo2.3
 ![](linuxnote_files/41.jpg)
 
 
-### umask
+## umask
 - umask 创建文件时设置默认权限
 - 使用八进制来从文件属性中删除权限
 - umask 默认权限是0002,后三位为002，对应删除other 的w，第二个权限
@@ -454,7 +491,7 @@ foo ->foo2.3
 ![](linuxnote_files/43.jpg)
 
 
-### change-role
+## change-role
 
 - logout & login
 - su
@@ -471,13 +508,13 @@ foo ->foo2.3
 	- sudo cmd
 	- sudo ls -l /root
 
-### chown
+## chown
 - change owner or/and group
 - chown [owner][:group] file 
 
 ![](linuxnote_files/46.jpg)
 
-### pssswd
+## pssswd
 - password
 - passwd [user]
 
@@ -485,7 +522,60 @@ foo ->foo2.3
 
 
 
+# 进程
+
+	命令：
+	ps          打印当前进程快照
+	top         显示任务
+	jobs        列出活跃的任务
+	bg          把一个任务放到后台执行
+	fg          把一个任务放到前台执行
+	kill        给一个进程发送信号
+	shutdown    关机或重启系统
+
+## ps
+- process
+- ps
+	- PID process id
+	- TTY teletype
+	- TIME 
+	- CMD command
+	- STAT status
+	- %CPU cpu耗时
+	- %MEM memory
+	- VSZ vitual memory
+	- RSS physical memory
+
+- ps x
+- ps aux
+![](linuxnote_files/49.jpg)
+
+- status
+![](linuxnote_files/48.jpg)
+
+
+## top
+- 实时更新进程信息
+- top
 
 
 
+	- vi编辑器
+	- :q!	quit vi
+	- :!bash	goto bash
+	- exit
+---
+	- crtl+c 中断进程
+	- jobs 查看后台进程
+	- vi& 查看进程地址
+	- fg front ground 把后台进程放到前台
+	- bg background 把进程放在后台进行
+	- ctrl+z 终止进程 
 
+## kill
+- kill [-signal] PID...
+![](linuxnote_files/50.jpg)
+
+## shutdown
+- shutdown -h now 关机
+- shutdown -r now 重启
