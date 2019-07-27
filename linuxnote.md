@@ -1,40 +1,42 @@
 # linuxnote  
 
 # 目录
-* 操作文件和目录：[操作文件和目录]
-	- 通配符： [wildchar]  
-	- 创建目录：[mkdir]
-	- 复制：[cp]
-	- 移动或重命名：[mv]
-	- 删除：[rm]  
-	- 链接：[ln]
-* 操作命令：[操作命令]
-	- 了解命令类型：[了解命令类型]
-	- 查看帮助：[查看帮助]
-	- 关键字搜索命令全称：[关键字搜索命令全称]
-	- 命令简介：[命令简介]
-	- 别名：[别名]
-* I/O重定向：[I/O重定向]
-	- redirection：[redirection]
-	- expansion：[expansion]
-	- 展开屏蔽：[展开屏蔽]
-	- 键盘高级操作技巧：[键盘高级操作技巧]
-* 权限：[权限]
-	- 身份：[身份]
-	- id：[id]
-	- chmod：[chmod]
-	- umask：[umask]
-	- change-role：[change-role]
-	- chown：[chown]
-	- passwd：[passwd]
-* 进程：[进程]
-	- ps：[ps]
-	- top：[top]
-	- kill：[kill]
-	- shutdown：[shutdown]
+* [操作文件和目录](#操作文件和目录)
+	- [通配符](#wildchar)  
+	- [创建目录](#mkdir)
+	- [复制](#cp)
+	- [移动或重命名](#mv)
+	- [删除](#rm)  
+	- [链接](#ln)
+* [操作命令](#操作命令)
+	- [了解命令类型](#了解命令类型)
+	- [查看帮助](#查看帮助)
+	- [关键字搜索命令全称](#关键字搜索命令全称)
+	- [命令简介](#命令简介)
+	- [别名](#别名)
+* [I/O重定向](#I/O重定向)
+	- [redirection](#redirection)
+	- [expansion](#expansion)
+	- [展开屏蔽](#展开屏蔽)
+	- [键盘高级操作技巧](#键盘高级操作技巧)
+* [权限](#权限)
+	- [身份](#身份)
+	- [id](#id)
+	- [chmod](#chmod)
+	- [umask](#umask)
+	- [change-role](#change-role)
+	- [chown](#chown)
+	- [passwd](#passwd)
+* [进程](#进程)
+	- [ps](#ps)
+	- [top](#top)
+	- [kill](#kill)
+	- [shutdown](#shutdown)
 
 
 # 操作文件和目录
+- [目录](#目录)
+
 ## wildchar
 - 通配符
 
@@ -124,6 +126,7 @@ foo ->foo2.3
 
 
 # 操作命令
+- [目录](#目录)
 
 	命令类型
 	1. execute binary #可执行的二进制程序，显示颜色是绿色
@@ -186,6 +189,7 @@ foo ->foo2.3
 
 
 # I/O重定向
+- [目录](#目录)
 
 ## redirection
 - stdout standard out device #标准的输出重定向到文件中
@@ -397,6 +401,7 @@ foo ->foo2.3
 
 
 # 权限
+- [目录](#目录)
 
 ## 身份
 - owner,group,other
@@ -523,6 +528,7 @@ foo ->foo2.3
 
 
 # 进程
+- [目录](#目录)
 
 	命令：
 	ps          打印当前进程快照
